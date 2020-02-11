@@ -1,0 +1,67 @@
+/* miniprogram/pages/search/index.wxss */
+.value{
+    text-align: left;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40rpx;
+    font-weight: 700;
+    padding: 0 32rpx;
+    height: 100rpx;
+}
+
+.share van-button{
+    --button-plain-background-color: transparent;
+    --button-default-border-color: transparent;
+    --button-normal-font-size: 24rpx;
+    --button-default-color: #FF7800;
+}
+
+.result{
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.result .total{
+    padding-left: 30rpx;
+    padding-bottom: 10rpx;
+    color: #666;
+    text-align: left;
+}
+
+.result .total text{
+    color: #FF7800;
+}
+
+.result .caption{
+    background-color: rgba(181, 210, 238, .4);
+    color: #234D75;
+    padding: 10rpx 0;
+}
+
+.result .scroll{
+    height: 500rpx;
+}
+
+.result .noData{
+    color: #969799;
+}
+
+.result .data{
+    padding: 10rpx 0;
+}
+
+.result .data:nth-of-type(2n){
+    background-color: #f5f5f5;
+}
+
+.icon{
+    color: #234D75;
+}
+
+.icon van-icon{
+    vertical-align: middle;
+}

@@ -1,0 +1,104 @@
+<!--miniprogram/pages/search/index.wxml-->
+
+<wxs src="../common.wxs" module="common" />
+
+<van-notice-bar
+  left-icon="bullhorn-o"
+  text="您只能查询到经由官方媒体发布的新型肺炎病毒感染者的行程，如未查询到行程信息并不代表一定没有与新型肺炎病毒感染者同程。同乘人员、可能接触人员返家后，暂不要外出，居家封闭隔离观察。如出现症状请就近到指定医院发热门诊救治。"
+/>
+
+<view class="title">
+  <view>疫情患者同程查询</view>
+  <view class="share">
+    <van-button 
+      icon="share" 
+      plain 
+      open-type="share" 
+      type="default" 
+      hover-class="none"
+    >分享给更多需要的人</van-button>
+  </view>
+</view>
+
+<van-cell-group border="{{false}}">
+
+  <picker mode="date" value="{{date}}" start="2020-01-01" bindchange="onDateChange">
+    <van-cell
+      center
+      title-width="180rpx"
+      title="出行日期"
+      is-link
+    >
+      <view class="value">{{date ? date : '例如：2020-01-01'}}</view>
+    </van-cell>
+
+  </picker>
+
+  <van-field
+    center
+    clearable
+    title-width="180rpx"
+    border="{{false}}"
+    bindinput="onNoInput"
+    label="出行车次"
+    value="{{no}}"
+    placeholder="车次或航班，例如：T123"
+  />
+</van-cell-group>
+
+<van-row gutter="20">
+    <van-col span="6" offset="6">
+      <van-button custom-class="mt10" size="small" type="info" block bind:click="onSearchTap">查询</van-button>
+    </van-col>
+    <van-col span="6">
+      <van-button custom-class="mt10" size="small" block bind:click="onResetTap">重置</van-button>
+    </van-col>
+</van-row>
+
+<view class="result mt30">
+
+    <view class="total">* 数据均搜集自官方媒体，截至目前共收录 <text>{{total}}</text> 条</view>
+
+    <view class="caption">
+        <van-row>
+          <van-col span="4">日期</van-col>
+          <van-col span="5">交通</van-col>
+          <van-col span="11">车次/车牌/航班</van-col>
+          <van-col span="4">详情</van-col>
+        </van-row> 
+    </view>
+
+    <scroll-view bindscrolltolower="onScrolltolower" bindscrolltoupper="onScrolltoupper" scroll-y class="scroll mt20" style="{{ isIphoneX ? 'height:760rpx;' : '' }}">
+    
+      <block wx:if="{{ncovList.length > 0}}">
+          <view class="data" wx:for="{{ncovList}}" wx:key="true" data-id="{{item._id}}" bind:tap="onDetailTap">
+              <van-row>
+                <van-col span="4">{{common.removeYear(item.t_date)}}</van-col>
+                <van-col span="5" wx:if="{{item.t_type==1}}">飞机</van-col>
+                <van-col span="5" wx:if="{{item.t_type==2}}">火车</van-col>
+                <van-col span="5" wx:if="{{item.t_type==3}}">地铁</van-col>
+                <van-col span="5" wx:if="{{item.t_type==4}}">长途客车/大巴</van-col>
+                <van-col span="5" wx:if="{{item.t_type==5}}">公交车</van-col>
+                <van-col span="5" wx:if="{{item.t_type==6}}">出租车</van-col>
+                <van-col span="5" wx:if="{{item.t_type==7}}">轮船</van-col>
+                <van-col span="5" wx:if="{{item.t_type==8}}">其它</van-col>
+                <van-col span="11">{{item.t_no}}</van-col>
+                <van-col span="4" class="icon">
+                  详情
+                  <van-icon name="/images/right.png" />
+                </van-col>
+              </van-row>
+          </view>
+          <view hidden="{{!loadAll}}">
+              <van-divider customStyle="font-size:24rpx;" contentPosition="center">已经到底啦</van-divider>
+          </view>
+      </block>
+      
+      <van-row wx:else class="noData">
+        <van-col span="20" offset="2">
+          暂无官方新闻提及该行程或地点存在确诊病例，数据如有遗漏或错误，请反馈给我们！
+        </van-col>
+      </van-row>
+
+    </scroll-view>
+</view>

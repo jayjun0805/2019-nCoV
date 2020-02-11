@@ -1,0 +1,12 @@
+/* pages/detail/index.wxss */
+.title{
+  color: #969799;
+}
+
+.value{
+  color: #323233;
+}
+
+van-tag{
+  margin-left: 20rpx;
+}

@@ -1,0 +1,8 @@
+var removeYear = function(str)
+{
+  return str.replace('2020-', '');
+}
+
+module.exports = {
+  removeYear: removeYear
+}

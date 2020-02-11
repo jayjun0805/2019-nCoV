@@ -1,0 +1,17 @@
+/**app.wxss**/
+page{
+  --cell-font-size: 24rpx;
+  --notice-bar-font-size: 24rpx;
+}
+
+.mt10{
+  margin-top: 10rpx;
+}
+
+.mt20{
+  margin-top: 20rpx;
+}
+
+.mt30{
+  margin-top: 30rpx;
+}
