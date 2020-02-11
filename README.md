@@ -35,7 +35,7 @@
 1. 参考 [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html#%E5%BC%80%E9%80%9A%E4%BA%91%E5%BC%80%E5%8F%91) 开通云开发环境。如果已开通，请忽略此步
 2. 在微信开发者工具中，将 `/cloudFunctions/` 下的云函数上传到云端，具体操作方式可参考文档中的云函数相关章节
 3. 打开云开发控制台，进入数据库管理页，添加如下集合：
-- nvov
+- ncov
 4. 对如下集合设置权限：
 - ncov：所有用户可读，仅创建者可写
 
