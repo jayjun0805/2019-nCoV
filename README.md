@@ -2,7 +2,7 @@
 
 > 本小程序提供新型冠状病毒（2019-nCoV）确诊患者相同行程信息查询，数据来自央视新闻等官方媒体。欢迎扫描以下小程序码体验。
 
-<img src="https://github.com/jayjun0805/2019-nCoV/blob/master/wxchat.jpg" width="200px">
+<img src="https://github.com/jayjun0805/2019-nCoV/blob/master/wxchat.jpg" width="300px">
 
 ## 项目背景
 
@@ -60,4 +60,4 @@
 
 ## 打赏作者
 
-![输入图片说明](https://images.gitee.com/uploads/images/2020/0208/101456_9a89fac8_2064944.jpeg "admire.jpeg")
+<img src="https://images.gitee.com/uploads/images/2020/0208/101456_9a89fac8_2064944.jpeg" width="300px">
