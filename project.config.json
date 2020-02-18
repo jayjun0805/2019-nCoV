@@ -22,8 +22,8 @@
 		},
 		"nodeModules": true
 	},
-	"appid": "wx9e4fc7710cc49db3",
-	"projectname": "2019-nCov-new",
+	"appid": "",
+	"projectname": "2019-nCov",
 	"libVersion": "2.10.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
